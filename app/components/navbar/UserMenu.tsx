@@ -30,14 +30,14 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           onClick={() => {}}
           className="
                 hidden 
-                md:block 
-                text-sm 
-                font-semibold 
+                cursor-pointer 
+                rounded-full 
+                px-4 
                 py-3 
-                px-4
-                rounded-full
+                text-sm
+                font-semibold
                 hover:bg-neutral-100
-                cursor-pointer"
+                md:block"
         >
           Register Your House
         </div>
@@ -45,19 +45,19 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         <div
           onClick={toggleOpen}
           className="
-                p-4
-                md:py-1
-                md:px-2
-                border-[1px]
-                border-neutral-200
+                transtion
                 flex
+                cursor-pointer
                 flex-row
                 items-center
                 gap-3
                 rounded-full
-                cursor-pointer
+                border-[1px]
+                border-neutral-200
+                p-4
                 hover:shadow-md
-                transtion
+                md:px-2
+                md:py-1
             "
         >
           {/* Hamburger Menu */}
@@ -75,19 +75,19 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         <div
           className="
                 absolute
-                rounded-xl
-                shadow-md
-                w-[40vw]
-                md:w-3/4
-                bg-white
-                overflow-hidden
                 right-0
                 top-12
+                w-[40vw]
+                overflow-hidden
+                rounded-xl
+                bg-white
                 text-sm
+                shadow-md
+                md:w-3/4
 
             "
         >
-          <div className="flex flex-col cursor-pointer">
+          <div className="flex cursor-pointer flex-col">
             {/* Signin conditional navbar render */}
 
             {currentUser ? (
