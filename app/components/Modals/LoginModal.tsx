@@ -60,6 +60,11 @@ const LoginModal = () => {
     loginModal.onOpen();
   }, [registerModal, loginModal]);
 
+  const toggle = useCallback( () => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal])
+
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading
@@ -111,9 +116,9 @@ const LoginModal = () => {
         "
       >
         <p>
-          Already have an account?
+          First time using Gojo
           <span
-            onClick={onToggle}
+            onClick={toggle}
             className="
               cursor-pointer
               text-neutral-800 
@@ -121,7 +126,7 @@ const LoginModal = () => {
             "
           >
             {" "}
-            Log in
+            create an account
           </span>
         </p>
       </div>
