@@ -8,6 +8,7 @@ import useRentModal from "@/app/hooks/useRentModal";
 import Heading from "../Heading";
 import { catagories } from "../navbar/Catagories";
 import CatagoryInput from "../inputs/CatagoryInput";
+import CountrySelect from "../inputs/CountrySelect";
 
 enum STEPS {
   CATAGORY = 0,
@@ -88,7 +89,7 @@ const RentModal = () => {
     return "Back";
   }, [step]);
 
-  const bodyContent = (
+  let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
         title="Which of these best describe your place"
@@ -118,13 +119,28 @@ const RentModal = () => {
     </div>
   );
 
+  // Rendering Step 2 Location Menu
+
+  if (step === STEPS.LOCATION) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Where is your place located"
+          subtitle="Help tenants find you"
+        />
+
+        <CountrySelect />
+      </div>
+    );
+  }
+
   return (
     <Modal
       title="Register your House"
       body={bodyContent}
       isOpen={rentModal.isOpen}
       onClose={rentModal.onClose}
-      onSubmit={rentModal.onClose}
+      onSubmit={onNext}
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === STEPS.CATAGORY ? undefined : onBack}
