@@ -64,7 +64,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           <AiOutlineMenu />
           {/* Avatar image holder */}
           <div className="hidden md:block">
-            <Avatar />
+            <Avatar src={currentUser?.image}/>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             "
         >
           <div className="flex cursor-pointer flex-col">
-            {/* Signin conditional navbar render */}
+            {/* Signin conditional navbar render using current user */}
 
             {currentUser ? (
               <>
